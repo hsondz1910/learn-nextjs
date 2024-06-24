@@ -1,11 +1,14 @@
 'use client'
-import { useRouter } from "next/router";
+
+import { useRouter } from "next/navigation";
+
 const AboutPage = () => {
     const router = useRouter()
+
     const handleBtn = () => {
-        alert("me");
         router.push("/")
     }
+
     return (
         <div>
             <h1>About Page</h1>
