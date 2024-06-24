@@ -1,0 +1,9 @@
+.red {
+    color: rgb(221, 120, 120);
+    border: 1px solid rgb(232, 153, 153);
+}
+
+.green {
+    color: rgb(24, 59, 24);
+    border: 1px solid rgb(21, 48, 21);
+}
