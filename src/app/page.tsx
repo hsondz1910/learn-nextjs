@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import style1 from '@/styles/app.module.css';
-import style2 from '@/styles/phson.module.css'
+import style2 from '@/styles/phson.module.css';
+import AppTable from '@/components/app.table';
 
 export default function Home() {
 	return (
@@ -19,5 +20,7 @@ export default function Home() {
           <a href="/booking">Booking</a>
         </li>
       </ul>
-    </div>);
+      <AppTable/>
+    </div>
+  );
 }
