@@ -30,11 +30,15 @@ export default function Home() {
   //   fetchData()
   // }, [])
 
-  console.log(">>> check data: ", data)
+  // console.log(">>> check data: ", data)
+
+  if (!data) {
+    return (<div>loading...</div>);
+  }
 
 	return (
     <div>
-      <div>{data?.length}</div>
+      {/* <div>{data?.length}</div> */}
       <ul>
         <li className='red'>
           {/* <a href="/about">About</a> */}
@@ -49,7 +53,7 @@ export default function Home() {
           <a href="/booking">Booking</a>
         </li>
       </ul>
-      <AppTable/>
+      <AppTable blogs={data}/>
     </div>
   );
 }
