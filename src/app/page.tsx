@@ -3,22 +3,38 @@ import Link from 'next/link';
 import style1 from '@/styles/app.module.css';
 import style2 from '@/styles/phson.module.css';
 import AppTable from '@/components/app.table';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
+import useSWR from "swr";
 
 export default function Home() {
 
-  useEffect(() => {
-    const fetchData = async() => {
-      const res = await fetch("http://localhost:8000/blogs")
-      const data = await res.json()
+  const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-      console.log(">>> check res: ", data)
+  const { data, error, isLoading } = useSWR(
+    "http://localhost:8000/blogs",
+    fetcher,
+    {
+      revalidateIfStale: false,
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false
     }
-    fetchData()
-  }, [])
+  );
+
+  // useEffect(() => {
+  //   const fetchData = async() => {
+  //     const res = await fetch("http://localhost:8000/blogs")
+  //     const data = await res.json()
+
+  //     console.log(">>> check res: ", data)
+  //   }
+  //   fetchData()
+  // }, [])
+
+  console.log(">>> check data: ", data)
 
 	return (
     <div>
+      <div>{data?.length}</div>
       <ul>
         <li className='red'>
           {/* <a href="/about">About</a> */}
