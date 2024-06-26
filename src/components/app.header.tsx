@@ -2,7 +2,8 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+// import NavDropdown from 'react-bootstrap/NavDropdown';
+import Link from 'next/link'
 
 function Header() {
   return (
@@ -12,9 +13,10 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/about">About</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            <Link href="/" className='nav-link'>Home</Link>
+            <Link href="/about" className='nav-link'>About</Link>
+            <Link href="/theo-doi-suc-khoe" className='nav-link'>Theo dõi sức khỏe</Link>
+            {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Theo dõi sức khỏe</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Bài tập cải thiện sức khỏe
@@ -24,7 +26,7 @@ function Header() {
               <NavDropdown.Item href="#action/3.4">
                 Separated link
               </NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

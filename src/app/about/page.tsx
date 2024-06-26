@@ -21,10 +21,9 @@ const AboutPage = () => {
                 <Button variant='info'>PHSON</Button>
                 <Button variant='light'>PHSON</Button>
                 <Button variant='dark'>PHSON</Button>
-                <Button variant='secondary'>PHSON</Button>
             </div>
             <div>
-                <button onClick={() => handleBtn()}>Back</button>
+                <Button variant='secondary' onClick={() => handleBtn()}>Back</Button>
             </div>
         </div>
     )
