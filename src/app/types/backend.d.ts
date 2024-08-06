@@ -1,4 +1,3 @@
-
 interface IBlog {
     id: number;
     content: string;
